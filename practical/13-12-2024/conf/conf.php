@@ -1,8 +1,19 @@
 <?php
-define('HOST', 'localhost');
+define('SERVERNAME', '127.0.0.1');
 define('USERNAME', 'root');
-define('PWD', '');
-define('DB', 'ICAE02');
+define('PASSWORD', 'mariadb');
+define('DBNAME', 'ICAE02');
+try {
+	$connect = mysqli_connect(SERVERNAME,USERNAME,PASSWORD,DBNAME);
+	if (!$connect) {
+		die("connection failed".mysqli_connect_error());
+	} 
+	else {
+		echo "Connected successfully<br>";
+	}
+} 
+catch (Exception $e) {
+	die($e->getMessage());
+}
 
-$connection = mysqli_connect(HOST,USERNAME,PWD,DB);
 ?>
