@@ -206,7 +206,7 @@ require_once 'func/func.php';
                         <?php
                             if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                 if($e4){
-                                    if ($e1 && $e3) {
+                                    if ($e1 || $e3) {
                                         $slot = $_POST['slot'];
                                         $vno = $_POST['vno'];
                                         $park = $_POST['park'];
