@@ -1,4 +1,32 @@
 <?php
+require_once 'conf.php';
+function GetTableData2($query,$connect){
+try {
+    $result=mysqli_query($connect,$query);
+
+    if(mysqli_num_rows($result)>0){
+        $col=mysqli_fetch_fields($result);
+
+        while($row=mysqli_fetch_assoc($result)){
+            echo "<div>";
+            foreach($row as $value){
+                echo  $value."<br>";
+                if($row!='empty'){
+                    echo "<div style='background-color:#FFBABA;'>";
+                    echo "</div>";
+                }
+            }
+            echo "</div>";
+        }
+    }
+    else{
+        echo "no result";
+    }
+} catch (Exception $e) {
+    die($e->getMessage());
+}
+}
+
 
 function GetTableData($query,$connection){
     $result = mysqli_query($connection,$query);
@@ -44,3 +72,5 @@ function ValidateSlot($slot,$connection){
     }
 
 }
+
+?>

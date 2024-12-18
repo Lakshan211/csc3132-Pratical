@@ -1,14 +1,9 @@
+
 <html lang="HTML">
 <head>
 
     <title>Parking Management App</title>
     <style>
-        <
-        style type
-
-        =
-        "text/css"
-        >
         .main {
             margin: 40px;
             padding: 20px;
@@ -91,7 +86,6 @@
 <?php
 require_once 'conf/conf.php';
 require_once 'func/func.php';
-$e1=false; $e2=false; $e3=false; $e4=false;
 ?>
 <div class="main">
     <div class="head">
@@ -123,7 +117,6 @@ $e1=false; $e2=false; $e3=false; $e4=false;
                     echo "$id<br>$vno</div>";
                 }
                 ?>
-
             </div>
         </div>
         <div class="right">
@@ -139,16 +132,13 @@ $e1=false; $e2=false; $e3=false; $e4=false;
                             </label>
                         </td>
                         <td>
-
-                                <?php
+                        <?php
                                 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                     echo "<label class='error'>";
                                     $e4 = RequiredField("park", "Please select the option");
                                     echo "</label>";
                                 }
                                 ?>
-
-
                         </td>
                     </tr>
                     <tr>
@@ -160,7 +150,7 @@ $e1=false; $e2=false; $e3=false; $e4=false;
                         </td>
                         <td>
                             <label class="error">
-                                <?php
+                            <?php
                                 if ($_SERVER['REQUEST_METHOD'] == 'POST' && $e4) {
                                     echo "<label class='error'>";
                                     $e1 = RequiredField("slot", "Please provide the slot number");
@@ -187,7 +177,7 @@ $e1=false; $e2=false; $e3=false; $e4=false;
                         </td>
                         <td>
                             <label class="error">
-                                <?php
+                            <?php
                                 if ($_SERVER['REQUEST_METHOD'] == 'POST' && $e4) {
                                     if ($_POST['park'] == 'alloc') {
                                         echo "<label class='error'>";
@@ -213,7 +203,7 @@ $e1=false; $e2=false; $e3=false; $e4=false;
                     </tr>
                     <tr>
                         <td colspan="2">
-                            <?php
+                        <?php
                             if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                 if($e4){
                                     if ($e1 && $e3) {
